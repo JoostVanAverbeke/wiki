@@ -26,7 +26,6 @@ Things you may want to cover:
 ## Application Model Description
 
 ScientificArticle
-EconomicalArticle
 LawArticle
 
 Article
@@ -45,6 +44,6 @@ How to generate the ERD diagram?
     rake erd
 
 
-
+[wiki ERD](https://github.com/JoostVanAverbeke/wiki/blob/master/erd.pdf)
 
 
