@@ -37,10 +37,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-erd', '~> 1.5', '>= 1.5.2'
+  gem 'faker', '~> 1.8'
 end
 
 group :test do
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'rails-controller-testing', '~> 1.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
