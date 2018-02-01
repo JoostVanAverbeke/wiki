@@ -3,8 +3,7 @@ class LawArticlesController < ApplicationController
 
   # GET /law_articles
   def index
-    @law_articles = LawArticle.all
-
+    @law_articles = LawArticlesDatatable.new(params).items
     render json: @law_articles
   end
 
