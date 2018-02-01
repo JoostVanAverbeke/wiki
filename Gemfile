@@ -4,7 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+# Please add the following to your Gemfile to avoid polling for changes:
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -40,6 +41,7 @@ group :development do
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-erd', '~> 1.5', '>= 1.5.2'
   gem 'faker', '~> 1.8'
+  gem 'swagger-docs', '~> 0.2.9'
 end
 
 group :test do

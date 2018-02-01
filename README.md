@@ -80,3 +80,13 @@ How to generate the ERD diagram?
  A Section has many Subsections (Sections)
 
 
+## Document the Your Rails API with swagger
+ See [https://www.sitepoint.com/do-the-right-thing-and-document-your-rails-api-with-swagger/](https://www.sitepoint.com/do-the-right-thing-and-document-your-rails-api-with-swagger/)
+
+###  Generating and Viewing Documentation
+The following Rake task will generate the docs for the controllers/actions that have been configured:
+
+    rake swagger:docs
+
+
+

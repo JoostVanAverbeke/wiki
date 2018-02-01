@@ -1,5 +1,7 @@
 class AuthorsController < ApplicationController
+  include Swagger::Docs::Methods
   before_action :set_author, only: [:show, :update, :destroy]
+  swagger_controller :authors, "Authors Management"
 
   # GET /authors
   def index
@@ -14,6 +16,17 @@ class AuthorsController < ApplicationController
   end
 
   # POST /authors
+  swagger_api :create do
+    summary "To create author"
+    notes "Implementation notes, such as required params, example queries for apis are written here."
+    param :form, "author[surname]", :string, :required, "Surname of author"
+    param :form, "author[firstname]", :integer, :optional, "First name of author"
+    # param_list :form, "author[status]", :string, :required, "Status of author, can be active or inactive"
+    response :success
+    response :unprocessable_entity
+    response 500, "Internal Error"
+  end
+
   def create
     @author = Author.new(author_params)
 
