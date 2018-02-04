@@ -4,6 +4,10 @@
   "basePath": "http://localhost:3000",
   "apis": [
     {
+      "path": "/law_articles.{format}",
+      "description": "Law Articles Management"
+    },
+    {
       "path": "/authors.{format}",
       "description": "Authors Management"
     }

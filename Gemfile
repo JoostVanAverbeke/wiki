@@ -31,6 +31,8 @@ gem 'will_paginate', '~> 3.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'swagger-docs', '~> 0.2.9'
+  gem 'faker', '~> 1.8'
 end
 
 group :development do
@@ -40,8 +42,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-erd', '~> 1.5', '>= 1.5.2'
-  gem 'faker', '~> 1.8'
-  gem 'swagger-docs', '~> 0.2.9'
 end
 
 group :test do
