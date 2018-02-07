@@ -4,9 +4,21 @@ class AuthorsController < ApplicationController
   swagger_controller :authors, "Authors Management"
 
   # GET /authors
-  def index
-    @authors = Author.all
+  swagger_api :index do
+    summary "Queries the authors"
+    notes "Queries the authors"
+    param :query, :surname, :string, :optional, "Queries authors on surname field that starts with"
+    param :query, :page, :integer, :optional, "Page number"
+    param :query, :limit, :integer, :optional, "Maximum retrieved authors, default 10"
+    param :query, :sort_column, :string, :optional, "Column to sort on, default surname"
+    param :query, :sort_direction, :string, :optional, "Sorts direction of column, default ascending"
+    response :success
+    response :unprocessable_entity
+    response 500, "Internal Error"
+  end
 
+  def index
+    @authors = AuthorsDatatable.new(params).items
     render json: @authors
   end
 
@@ -17,7 +29,7 @@ class AuthorsController < ApplicationController
 
   # POST /authors
   swagger_api :create do
-    summary "To create author"
+    summary "To create an author"
     notes "Implementation notes, such as required params, example queries for apis are written here."
     param :form, "author[surname]", :string, :required, "Surname of author"
     param :form, "author[firstname]", :integer, :optional, "First name of author"

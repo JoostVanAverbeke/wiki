@@ -1,14 +1,79 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "http://localhost:3000",
+  "basePath": "http://localhost:8050",
   "resourcePath": "authors",
   "apis": [
     {
       "path": "/authors",
       "operations": [
         {
-          "summary": "To create author",
+          "summary": "Queries the authors",
+          "notes": "Queries the authors",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "surname",
+              "type": "string",
+              "description": "Queries authors on surname field that starts with",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "limit",
+              "type": "integer",
+              "description": "Maximum retrieved authors, default 10",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "sort_column",
+              "type": "string",
+              "description": "Column to sort on, default surname",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "sort_direction",
+              "type": "string",
+              "description": "Sorts direction of column, default ascending",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal Error"
+            }
+          ],
+          "nickname": "Authors#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/authors",
+      "operations": [
+        {
+          "summary": "To create an author",
           "notes": "Implementation notes, such as required params, example queries for apis are written here.",
           "parameters": [
             {
