@@ -6,5 +6,5 @@ JSONAPI.configure do |config|
   config.maximum_page_size = 1000
 
   # Do this if you use UUID's instead of Integers for id's
-  config.resource_key_type = :uuid
+  # config.resource_key_type = :uuid
 end
