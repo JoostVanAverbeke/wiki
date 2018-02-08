@@ -7,7 +7,7 @@ class AuthorsController < ApplicationController
   swagger_api :index do
     summary "Queries the authors"
     notes "Queries the authors"
-    param :query, :surname, :string, :optional, "Queries authors on surname field that starts with"
+    param :query, :surname, :string, :optional, "Queries authors on surname"
     param :query, :page, :integer, :optional, "Page number"
     param :query, :limit, :integer, :optional, "Maximum retrieved authors, default 10"
     param :query, :sort_column, :string, :optional, "Column to sort on, default surname"
